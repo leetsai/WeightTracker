@@ -4,6 +4,10 @@
 
 app.controller('myChartCtrl', function($scope) {
   Highcharts.chart('container', {
+    chart: {
+      type: 'line'
+    },
+
     title: {
       text: "Lee's Weight",
       x: -20 // center
@@ -30,7 +34,7 @@ app.controller('myChartCtrl', function($scope) {
     series: [{
       name: 'Daily Avg',
       color: '#2980B9',
-      data: [160, 160.5, 161, 164.9, 164.32, 163.7, 161.55, 165.21, 164.9, 164.32, 163.7, 161.005]
+      data: [150, 155, 160, 165]
     }, {
       name: '7-Day rAvg',
       color: '#27AE60',

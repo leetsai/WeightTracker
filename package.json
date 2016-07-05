@@ -1,11 +1,15 @@
 {
-  "name": "Running_Challenge",
+  "name": "WeightTracker",
   "version": "1.0.0",
-  "description": "Lee's Running Challenge Dependencies",
+  "description": "Lee's WeightTracker Dependencies",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leetsai/WeightTracker.git"
   },
   "keywords": [],
   "author": "Lee Tsai",
