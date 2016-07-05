@@ -1,0 +1,22 @@
+{
+  "name": "Running_Challenge",
+  "version": "1.0.0",
+  "description": "Lee's Running Challenge Dependencies",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Lee Tsai",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "connect": "^3.4.1",
+    "express": "^4.14.0",
+    "highcharts": "^4.2.5",
+    "jquery": "^3.0.0",
+    "serve-static": "^1.11.1"
+  }
+}
