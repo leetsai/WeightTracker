@@ -9,14 +9,14 @@ app.config(function($routeProvider) {
     })
     .when('/dashboard', {
       // prevent the user from going straight to the dashboard
-      resolve: {
-        // checks against a function
-        "check": function($location, $rootScope) {
-          if(!$rootScope.loggedIn) {
-            $location.path('/');
-          }
-        }
-      },
+      // resolve: {
+      //   // checks against a function
+      //   "check": function($location, $rootScope) {
+      //     if(!$rootScope.loggedIn) {
+      //       $location.path('/');
+      //     }
+      //   }
+      // },
       templateUrl: 'views/dashboard.html'
     })
     .otherwise({

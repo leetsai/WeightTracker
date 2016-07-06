@@ -1,15 +1,25 @@
 <h1>Welcome!<h1>
 
-
-
 <h3>
-  <div ng-app="WeightApp" ng-controller='myChartCtrl'>
-    Date: <input ng-model="date" type="date"/> <br>
-    Weight: <input ng-model="name" type="number"/> <br>
-  </div>
-
-  <div id='container'>
-    Placeholder for chart
-  </div>
-
+  <!-- Date: <input ng-model="date" type="date"/> <br> -->
+  <!-- Weight: <input ng-model="name" type="number"/> <br> -->
 </h3>
+
+<div ng-app="WeightApp" ng-controller='myChartCtrl'>
+  <h4>Please enter your weight</h4>
+  <form novalidate>
+    <input ng-model="weight">
+      <!-- The method for submitting the data goes on the button. -->
+      <!-- The name is passed to the method you want to use to store the data, which you make happen when the button is clicked by using the ngClick directive. -->
+    <input type="submit" ng-click="submitForm(weight)" value="Submit!">
+  </form>
+
+  <!-- <p>Hello {{weight}}</p> -->
+
+</div>
+
+<div id='container'>
+  Placeholder for chart
+</div>
+
+<!-- <button id="addNew">Redraw</button> -->
