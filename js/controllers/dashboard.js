@@ -16,13 +16,14 @@ app.controller('myChartCtrl', function($scope) {
     xAxis: {
       title: {text: 'Month'},
       type: 'datetime',
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-      ]
+      categories: [1,2,3,4,5,6,7,8,9,10,11,12]
     },
 
     yAxis: {
-      title: {text: 'Weight (Lbs)'},
+      min: 0,
+      title: {
+        text: 'Weight (Lbs)'
+      }
     },
 
     tooltip: {
@@ -32,22 +33,21 @@ app.controller('myChartCtrl', function($scope) {
       crosshairs: true
     },
 
-    series: [{
-      name: 'Daily Avg',
-      color: '#2980B9',
-      data: [162.8, 161.8, 162.8, 163.4, 162.4, 161.4, 162.2, 160.4, 161.2, 161.6, 162, 162.4]
-    }, {
-      name: '7-Day rAvg',
-      color: '#27AE60',
-      dashStyle: 'longdash',
-      data: [163.57, 163.31, 163.46, 163.03, 162.57, 162.4, 162.06, 161.97, 161.8, 161.6, 161.6, 161.6]
-    }, {
-      name: '30-Day rAvg',
-      color: '#F1C40F',
-      dashStyle: 'dot',
-      data: [162.33, 162.38, 162.44, 162.54, 162.59, 162.58, 162.57, 162.48, 162.38, 162.29, 162.28, 162.38]
-    }
-  ],
+    series: chartData,
+
+    // series: [
+    // { name: 'Daily Avg',
+    //   color: '#2980B9',
+    //   data: [162.8, 161.8, 162.8, 163.4, 162.4, 161.4, 162.2, 160.4, 161.2, 161.6, 162, 162.4]}
+    // { name: '7-Day rAvg',
+    //   color: '#27AE60',
+    //   dashStyle: 'longdash',
+    //   data: [163.57, 163.31, 163.46, 163.03, 162.57, 162.4, 162.06, 161.97, 161.8, 161.6, 161.6, 161.6]},
+    // { name: '30-Day rAvg',
+    //   color: '#F1C40F',
+    //   dashStyle: 'dot',
+    //   data: [162.33, 162.38, 162.44, 162.54, 162.59, 162.58, 162.57, 162.48, 162.38, 162.29, 162.28, 162.38]}
+    // ],
 
     legend: {
       layout: 'vertical',
@@ -59,28 +59,11 @@ app.controller('myChartCtrl', function($scope) {
   })
 
   $scope.submitForm = function(weight) {
-    // $scope.data.push(weight);
-    // chart.series[0].data.push(['Jan', weight]);
-    chart.series[0].addPoint([3, weight]);
-    console.log(chart.series[0].data[0]);
-    // Update the chart with $scope.data
-    // chart.series[0].addPoint([9, weight], true, true);
-    // Update the y-axis
-    // console.log("this is weight: ", weight);
-    // console.log("this is chart: ", chart.series[0]);
-    // chart.yAxis[0].update({
-    //   min: 0,
-    //   max: Math.max.apply(null, $scope.data),
-    //   tickInterval: 10
-    // });
-    // chart.yAxis[0].update({
-    //         labels: {
-    //             enabled: false
-    //         },
-    //         title: {
-    //             text: null
-    //         }
-    //     });
+    weight = +weight;
+    chart.series[0].addPoint([chart.series[0].data.length+1, weight]);
+    console.log("this is x-axis: ", chart.series[0].data.length);
+    console.log("this is weight: ", weight);
+    console.log("this is chart: ", chart.series[0]);
     chart.redraw();
   };
 });
@@ -179,3 +162,7 @@ app.controller('myChartCtrl', function($scope) {
 //     chart.redraw();
 //   };
 // });
+
+// categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+//   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+// ]
